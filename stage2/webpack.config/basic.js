@@ -1,5 +1,5 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
 const projectRoot = path.resolve(__dirname, '../')
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['env','stage-3','react']
+                    presets: ['env','react']
                 }
             },
             { 
