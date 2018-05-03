@@ -13,8 +13,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.scss', '.html'],
         alias: {
-            'components': `${projectRoot}/components`,
-            'utils': `${projectRoot}/utils`
+            'components': `${projectRoot}/src/components`,
+            'utils': `${projectRoot}/src/utils`
         }
     },
     module: {
