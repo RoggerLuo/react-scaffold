@@ -4,7 +4,7 @@ const projectRoot = path.resolve(__dirname, '../')
 
 module.exports = {
     entry: {
-        app: `${projectRoot}/src/entry.js`,
+        app: `${projectRoot}/src/index.js`,
     },
     output: {
         path: `${projectRoot}/dist`,
@@ -13,8 +13,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.scss', '.html'],
         alias: {
-            'components': `${projectRoot}/src/components`,
-            'utils': `${projectRoot}/src/utils`
+            'component': `${projectRoot}/src/component`,
+            'util': `${projectRoot}/src/util`
         }
     },
     module: {
