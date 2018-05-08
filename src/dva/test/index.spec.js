@@ -1,4 +1,4 @@
-import test from '../../test.js'
+import test from '../../utils/test.js'
 import _test from 'tape'
 import model from './model'
 import dva from '../index.js'
@@ -43,7 +43,7 @@ export function* watchIncrementAsync() {
     yield takeEvery('INCREMENT_ASYNC', incrementAsync)
 }
 
-_test('saga',(t)=>{
+_test('dva.saga',(t)=>{
     app.saga(watchIncrementAsync)
     app._store.dispatch({type:'INCREMENT_ASYNC'})
     t.equal(
