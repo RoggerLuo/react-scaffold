@@ -1,5 +1,5 @@
 export default {
-    namespace: 'server',
+    namespace: 'server2',
     state: {
         content: 'testContent',
         itemId: 'testId',
@@ -10,6 +10,11 @@ export default {
             obj[key] = value
             return Object.assign({}, state, obj)
         },
-    }
+    },
+    event: {
+        onReady(dispatch){
+            dispatch({ type:'ChangeAsyncRoger' })
+        }
+    },
 }
 

@@ -14,13 +14,14 @@ module.exports = {
         extensions: ['.js', '.jsx', '.scss', '.html'],
         alias: {
             'component': `${projectRoot}/src/component`,
-            'util': `${projectRoot}/src/util`
+            'util': `${projectRoot}/src/util`,
+            'dva': `${projectRoot}/src/dva`
         }
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 options: {

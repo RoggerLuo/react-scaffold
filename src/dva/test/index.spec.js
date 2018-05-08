@@ -2,8 +2,9 @@ import test from '../../test.js'
 import _test from 'tape'
 import model from './model'
 import dva from '../index.js'
+const app = dva
+// app.start()
 
-const app = dva()
 test('dva.model',(t)=>{
     t('reducer的state是否添加成功',()=>{
         app.model(model)
@@ -35,7 +36,7 @@ import { delay } from 'redux-saga'
 import { put, takeEvery } from 'redux-saga/effects'
 export function* incrementAsync() {
     yield delay(1000)
-    yield put({type:'server/change',key:'content',value:'sagaTest'})
+    yield put({type:'server/change',key:'content',value:'sagaTestFinal'})
 
 }
 export function* watchIncrementAsync() {
@@ -60,7 +61,7 @@ _test('saga',(t)=>{
     setTimeout(function(){
         t.equal(
             app._store.getState().server.content,
-            'sagaTest',
+            'sagaTestFinal',
             'saga触发的2秒之后，修改了reduce state'
         )
         t.end()

@@ -11,16 +11,18 @@ const app = {
     _store: null,
     model: null,
     saga: null,
-    fetch
+    fetch,
+    start
 }
-export default function(){
-    if(startedFlag){
-        return app        
-    }
-    start(app)
-    return app
-}
-
+start(app)
+export default app
+// function(){
+//     if(startedFlag){
+//         return app        
+//     }
+//     start(app)
+//     return app
+// }
 
 function start(app) {
     startedFlag = true
@@ -34,6 +36,7 @@ function start(app) {
         )
         reducers[m.namespace] = handleModel(m)
         app._store.replaceReducer(combineReducers({ ...reducers }))
+        m.event && m.event.onReady && m.event.onReady(app._store.dispatch)
     }
     app.saga = function(effect) {
         sagaMiddleware.run(effect)

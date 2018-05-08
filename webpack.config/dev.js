@@ -25,7 +25,7 @@ function dev(basic){
         contentBase: './dist', // static server
         inline: true,
         hot: true,
-        host: "172.16.1.178",
+        host: "localhost" //"172.16.1.178",
     }
     /*basic.devServer.proxy = {
         '/': {

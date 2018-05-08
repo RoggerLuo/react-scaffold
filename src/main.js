@@ -1,6 +1,5 @@
-import "babel-polyfill"
-
 import dva from 'util/dva'
+app = dva
 import reducer from './reducers'
 
 import { createStore, applyMiddleware } from 'redux'
