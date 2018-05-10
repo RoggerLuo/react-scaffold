@@ -1,8 +1,12 @@
 export default function(url, { ...options }) {
     options.credentials = 'include'
-    if (options.method === "POST") {
+    if(!options.method) options.method = "GET"
+    options.method = options.method.toUpperCase()
+    if (options.method === 'POST' || options.method === 'PUT') {
         options.body = transformBody(options.body)
     }
+
+
     if (options.query) {
         url = url + transformQuery(options.query)
     }
