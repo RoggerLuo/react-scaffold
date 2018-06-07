@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import dva from 'dva'
 import App from './App'
-import './style'
 
 render(
     <Provider store={dva._store}>
