@@ -1,18 +1,32 @@
-## 遗留问题
+# scaffold
+## dvax
+dvax需要使用regenerator
+## babel
+以webpack.config中的为准，不设置`.babelrc`
+### babel-presets-env
+如果设置"targets": {"browsers": "> 5%"} 就不会转let和const，  
+部分浏览器就会报错，目前不加配置项  
+### babel-plugin-transform-regenerator
+使用这个插件，需要引入`regenerator runtime`或者`babel polyfill`
 
+``` javascript
+import "regenerator-runtime/runtime"
+```
+### babel-presets-stage-3
+为了正常使用拓展运算符
+
+## package.json
+### browserslist
+为了autoprefixer能够转换flex等样式，兼容老机型  
+
+```
+"browserslist": [
+    "iOS >= 8",
+    "Android > 4"
+]
+```
+
+
+# others
 1.build-test 还没有弄完 前端分离部署  
  
-2.object spread operater和Object.assign是否支持还不确定，  
-stage-3和polyfill与`...`和`assign`的关系还不知道
-
-### react & redux
-
-### dev
-直接通过webpack-dev-server启动，读取webpack.config.js  
-
-### build
-用node引入webpack来执行
-
-### other
-dev和build共用一个basic配置文件，  
-basic配置文件中不包括css-loader，由不同的环境分别配置

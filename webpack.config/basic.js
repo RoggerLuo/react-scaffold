@@ -8,39 +8,45 @@ module.exports = {
     },
     output: {
         path: `${projectRoot}/dist`,
-        filename: 'bundle.[hash].js'
+        chunkFilename: '[name].bundle.js',
+        filename: 'bundle.[hash].js',
+        // publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.scss', '.html'],
+        extensions: ['.js', '.jsx', '.css', '.html'],
         alias: {
-            'component': `${projectRoot}/src/component`,
-            'util': `${projectRoot}/src/util`,
-            'dva': `${projectRoot}/src/dva`
+            'components': `${projectRoot}/src/components`,
+            'util': `${projectRoot}/src/util`
         }
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js|jsx)$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules)/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['env','react']
+                    presets: [
+                        "env", 
+                        "stage-3",
+                        "react"
+                    ],
+                    plugins: [
+                        "transform-regenerator"
+                    ]
                 }
             },
-            { 
-                test: /\.html$/, 
-                use: [ 'html-loader' ]
+            {
+                test: /\.html$/,
+                use: ['html-loader']
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
                 loader: 'url-loader',
                 options: {
-                  limit: 8192
+                    limit: 8192
                 }
             }
         ]
     },
     context: path.join(__dirname, '')
 }
-

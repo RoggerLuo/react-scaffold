@@ -8,6 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const projectRoot = path.resolve(__dirname, '../')
 
 function product(basic){
+    basic.entry.app = `${projectRoot}/src/indexSSR.js`
     basic.mode = 'production'
     basic.output.filename = 'bundle.[hash].js'
     basic.module.rules.push({
@@ -17,17 +18,12 @@ function product(basic){
             use: [ 'css-loader' ]
         })
     })
-    // basic.optimization = {
-    //     splitChunks: {
-    //         cacheGroups: {
-    //             vendor: {
-    //                 chunks: 'all',
-    //                 name: 'draftjs',
-    //                 test: /draft-js/, //直接写module名
-    //             }
-    //         }
-    //     }
-    // }
+    basic.target = 'node'
+    basic.node = {
+       __filename: true,
+       __dirname: true,
+       // See "Other node core libraries" for additional options.
+     }
     basic.plugins = [
         new CleanWebpackPlugin(['dist'],{ root: projectRoot }),
         new HtmlWebpackPlugin({
