@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-export class App extends React.Component { 
+class App extends React.Component { 
     constructor(props) {
         super(props)
         this.inputRef = React.createRef()
@@ -10,6 +10,7 @@ export class App extends React.Component {
         const keyCode = event.keyCode
     }
     render() {
-        return <input type="text" ref={this.inputRef} onKeyDown={this.onkeydown} />;
+        return <h2>{'Welcome'}</h2>
     }
 }
+export default App
