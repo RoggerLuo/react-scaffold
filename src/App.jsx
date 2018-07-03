@@ -1,14 +1,15 @@
 import React from 'react'
-const Test = ()=><div key={1}>test3</div>
-export default function(){
-    const t = <Test/>
-    return (<div>
-        Demo test
-        {<div key={1}>test2</div>}
-        {t}
-        <div>split</div>
-        {t}
-        </div>
-    )
+import './style.css'
+export class App extends React.Component { 
+    constructor(props) {
+        super(props)
+        this.inputRef = React.createRef()
+        this.onkeydown = this.onkeydown.bind(this)
+    }
+    onkeydown(event){
+        const keyCode = event.keyCode
+    }
+    render() {
+        return <input type="text" ref={this.inputRef} onKeyDown={this.onkeydown} />;
+    }
 }
-
