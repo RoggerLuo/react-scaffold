@@ -14,8 +14,6 @@ function dev(basic) {
                 loader: 'css-loader',
                 // options: { modules: true }
             },
-            // 'less-loader',
-            // { loader: 'less-loader', options: { javascriptEnabled: true } }
             'postcss-loader'
         ]
     })

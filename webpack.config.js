@@ -1,2 +1,2 @@
-const dev = require('./webpack.config/dev.js')
+const dev = require('./webpack/dev.js')
 module.exports = dev

@@ -1,13 +1,12 @@
 import React from 'react'
+import './global.css'
 import './style.css'
+import { Model } from 'dvax'
+import model from './model'
+Model.create(model)
 class App extends React.Component { 
     constructor(props) {
         super(props)
-        this.inputRef = React.createRef()
-        this.onkeydown = this.onkeydown.bind(this)
-    }
-    onkeydown(event){
-        const keyCode = event.keyCode
     }
     render() {
         return <h2>{'Welcome'}</h2>

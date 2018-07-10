@@ -4,12 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ssr": "cross-env NODE_ENV=ssr node ./webpack.config/ssr.js",
     "start": "webpack-dev-server --progress --color",
-    "build": "node ./webpack.config/build.js",
-    "build-test": "node ./webpack.config/build-test.js",
-    "test": "cross-env NODE_ENV=test node dva/test/walkFiles.js | grep spec.js$ | xargs -n1 -I {} tape -r babel-register -r ./dva/test/inject.js {} | tap-difflet",
-    "dva-test": "cross-env NODE_ENV=test tape -r babel-register -r ./dva/test/inject.js */test/*.spec.js | tap-difflet"
+    "build": "node ./webpack/build.js"
   },
   "author": "",
   "license": "ISC",
@@ -45,7 +41,7 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
-    "dvax": "^0.0.3",
+    "dvax": "^0.0.15",
     "es6-promise": "^4.2.4",
     "invariant": "^2.2.4",
     "react": "^16.3.2",
