@@ -41,7 +41,7 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
-    "dvax": "^0.0.15",
+    "dvax": "^0.0.23",
     "es6-promise": "^4.2.4",
     "invariant": "^2.2.4",
     "react": "^16.3.2",

@@ -21,8 +21,15 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /\.(js|jsx)$/,
-                exclude: /(node_modules)/,
+                test(input){
+                    if(input.indexOf('dvax') != -1) {
+                        return true
+                    }
+                    if(input.indexOf('node_modules') != -1) {
+                        return false                        
+                    }
+                    return true
+                },
                 loader: 'babel-loader',
                 options: {
                     presets: [

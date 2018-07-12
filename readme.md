@@ -1,6 +1,4 @@
 # scaffold
-## dvax
-dvax需要使用regenerator
 ## babel
 以webpack.config中的为准，不设置`.babelrc`
 ### babel-presets-env
@@ -25,8 +23,3 @@ import "regenerator-runtime/runtime"
     "Android > 4"
 ]
 ```
-
-
-# others
-1.build-test 还没有弄完 前端分离部署  
- 
