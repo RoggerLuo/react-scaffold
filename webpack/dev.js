@@ -7,12 +7,12 @@ function dev(basic) {
     basic.mode = 'development'
     basic.output.filename = 'bundle.js'
     basic.module.rules.push({
-        test: /\.(less|css)$/,
+        test: /\.(css)$/,
         use: [
             'style-loader',
             {
                 loader: 'css-loader',
-                // options: { modules: true }
+                options: { modules: true }
             },
             'postcss-loader'
         ]
@@ -27,17 +27,17 @@ function dev(basic) {
         new webpack.HotModuleReplacementPlugin()
     ]
     basic.devServer = {
-        contentBase: './dist', // static server
+        contentBase: './dist', 
         inline: true,
         hot: true,
-        host: "localhost"//"172.16.1.178" //"192.168.1.5",// , //  //"localhost" //
+        host: "localhost"
     }
-    /*basic.devServer.proxy = {
+    basic.devServer.proxy = {
         '/': {
-            target: 'http://172.16.1.25/',
+            target: 'http://172.16.1.182:8000/v2/',
             changeOrigin: true
         }
-    }*/
+    }
     return basic
 }
 
