@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --color",
-    "build": "node ./webpack/build.js"
+    "build": "node ./webpack/build.js",
+    "test": "tape -r ./babelRegister.js **/*.spec.js"
   },
   "author": "",
   "license": "ISC",
@@ -43,6 +44,7 @@
   "dependencies": {
     "dvax": "^0.0.23",
     "es6-promise": "^4.2.4",
+    "immutable": "^3.8.2",
     "invariant": "^2.2.4",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
