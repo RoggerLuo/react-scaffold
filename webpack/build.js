@@ -23,17 +23,17 @@ function product(basic){
             ]
         })
     })
-    basic.optimization = {
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    chunks: 'all',
-                    name: 'reactDom',
-                    test: /react-dom/, 
-                }
-            }
-        }
-    }
+    // basic.optimization = {
+    //     splitChunks: {
+    //         cacheGroups: {
+    //             vendor: {
+    //                 chunks: 'all',
+    //                 name: 'reactDom',
+    //                 test: /react-dom/, 
+    //             }
+    //         }
+    //     }
+    // }
     basic.plugins = [
         new CleanWebpackPlugin(['dist'],{ root: projectRoot }),
         new HtmlWebpackPlugin({
