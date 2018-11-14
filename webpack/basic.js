@@ -31,7 +31,7 @@ module.exports = {
                     return true
                 },
                 loader: 'babel-loader',
-                options: {
+                /*options: { //优先使用webpack中的，其次才是.babalrc
                     presets: [
                         "env", 
                         "stage-3",
@@ -40,7 +40,7 @@ module.exports = {
                     plugins: [
                         "transform-regenerator"
                     ]
-                }
+                }*/
             },
             {
                 test: /\.html$/,
