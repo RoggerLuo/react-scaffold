@@ -7,6 +7,6 @@
     "plugins": [
         "transform-regenerator",
         "transform-class-properties",
-        ["import", { "libraryName": "antd-mobile", "style": "css" }] 
+        ["import", { "libraryName": "antd", "style": "css" }] 
     ]
 }
