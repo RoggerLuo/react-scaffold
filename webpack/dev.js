@@ -7,7 +7,18 @@ function dev(basic) {
     basic.mode = 'development'
     basic.output.filename = 'bundle.js'
     basic.module.rules.push({
+        test:/\.css$/,
+        exclude: /src/,
+        use:[
+          { loader: "style-loader",},
+          {
+              loader: "css-loader",
+          }
+        ]
+    })
+    basic.module.rules.push({
         test: /\.(css)$/,
+        exclude: /node_modules/,
         use: [
             'style-loader',
             {
@@ -34,7 +45,7 @@ function dev(basic) {
     }
     basic.devServer.proxy = {
         '/': {
-            target: 'http://172.16.1.182:8000/v2/',
+            target: 'http://xxx.xxx.xxx:8000/',
             changeOrigin: true
         }
     }

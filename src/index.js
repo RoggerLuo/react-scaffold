@@ -9,6 +9,6 @@ import fetch from 'utils/fetch'
 import App from './App'
 
 const config = { effects: { fetch } }
-const DvaxApp = dvax.start(App,config)
+const DvaxApp = dvax.start(<App/>,config)
 render(DvaxApp,document.getElementById('root'))
 
