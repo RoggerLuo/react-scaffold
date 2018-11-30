@@ -6,7 +6,6 @@ import { render } from 'react-dom'
 import dvax from 'dvax'
 import Fetch from 'dvax/fetch'
 import App from './App'
-
 const fetch = Fetch({ 
     baseUrl: 'localhost:5555', 
     headers: {
@@ -18,6 +17,7 @@ const fetch = Fetch({
     receiveData(res){
         if(res.hasErrors) {
             alert('接口错误')
+            return res
         }
         return res
     }
