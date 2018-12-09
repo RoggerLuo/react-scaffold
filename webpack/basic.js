@@ -22,10 +22,13 @@ module.exports = {
     module: {
         rules: [{
                 test(input){
-                    if(input.indexOf('dvax') != -1) {
+                    if(input.indexOf('dvax') !== -1) {
                         return true
                     }
-                    if(input.indexOf('node_modules') != -1) {
+                    if(input.indexOf('antd') !== -1) {
+                        return true
+                    }
+                    if(input.indexOf('node_modules') !== -1) {
                         return false                        
                     }
                     return true

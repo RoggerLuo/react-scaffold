@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --color --open",
     "build": "node ./webpack/build.js",
-    "test": "tape -r ./babelRegister.js src/**/*.spec.js"
+    "analyze": "webpack --config webpack/analyze.js --profile --json > webpack/stats.json"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +38,7 @@
     "tape": "^4.9.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.3"
   },

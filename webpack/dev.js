@@ -41,7 +41,7 @@ function dev(basic) {
         contentBase: './dist', 
         inline: true,
         hot: true,
-        host: "localhost"
+        host: "0.0.0.0"
     }
     basic.devServer.proxy = {
         '/': {

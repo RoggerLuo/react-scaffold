@@ -11,6 +11,15 @@ function product(basic){
     basic.mode = 'production'
     basic.output.filename = 'bundle.[hash].js'
     basic.module.rules.push({
+        test: /\.(less)$/,
+        exclude: /node_modules/,
+        use: [
+            {loader: 'style-loader'}, 
+            {loader: 'css-loader',options: { modules: true }}, 
+            {loader: 'less-loader'}
+        ]
+    })
+    basic.module.rules.push({
         test: /\.css$/,
         exclude: /src/,
         use: ExtractTextPlugin.extract({
