@@ -38,17 +38,19 @@ function dev(basic) {
         new webpack.HotModuleReplacementPlugin()
     ]
     basic.devServer = {
+        disableHostCheck: true,
         contentBase: './dist', 
         inline: true,
         hot: true,
-        host: "0.0.0.0"
+        host: "0.0.0.0",
+        port:'8088'
     }
-    basic.devServer.proxy = {
-        '/': {
-            target: 'http://xxx.xxx.xxx:8000/',
-            changeOrigin: true
-        }
-    }
+    // basic.devServer.proxy = {
+    //     '/': {
+    //         target: 'http://xxx.xxx.xxx:8000/',
+    //         changeOrigin: true
+    //     }
+    // }
     return basic
 }
 
