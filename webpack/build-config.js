@@ -51,6 +51,11 @@ function product(basic){
     //                 chunks: 'all',
     //                 name: 'reactDom',
     //                 test: /react-dom/, 
+    //             },
+    //             vendor2: {
+    //                 chunks: 'all',
+    //                 name: 'some',
+    //                 test: /some/, 
     //             }
     //         }
     //     }
